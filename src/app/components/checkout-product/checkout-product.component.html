@@ -1,0 +1,19 @@
+<div class="checkoutProduct">
+  <img [src]="cartItem.imageUrl" alt="" class="checkoutProduct__image" />
+  <div class="checkoutProduct__info">
+    <p class="checkoutProduct__title">{{ cartItem.title }}</p>
+    <p class="checkoutProduct__price">
+      <small>$</small>
+      <strong>{{ cartItem.price }}</strong>
+    </p>
+    <p class="checkoutProduct__quantity">
+      <b>x {{ cartItem.quantity }}</b>
+    </p>
+    <div class="checkoutProduct__rating">
+      <ng-container *ngFor="let _ of getModifiedRating(cartItem.rating)">
+        <p>⭐</p>
+      </ng-container>
+    </div>
+    <button (click)="onRemoveFromCart()">Remove from basket</button>
+  </div>
+</div>
