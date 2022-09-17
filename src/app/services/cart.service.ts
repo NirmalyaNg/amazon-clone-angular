@@ -8,28 +8,8 @@ import { Product } from '../models/product.model';
   providedIn: 'root',
 })
 export class CartService {
-  private _cart: CartItem[] = [
-    {
-      id: 'p1',
-      title: 'Adorn India Chandler L Shape 5 Seater Sofa Set Plain',
-      price: '23999',
-      rating: 5,
-      quantity: 1,
-      imageUrl:
-        'https://images-eu.ssl-images-amazon.com/images/I/31wFbn6-XUL._SY300_SX300_QL70_FMwebp_.jpg',
-    },
-  ];
-  public cartChanged = new BehaviorSubject<CartItem[]>([
-    {
-      id: 'p1',
-      title: 'Adorn India Chandler L Shape 5 Seater Sofa Set Plain',
-      price: '23999',
-      rating: 5,
-      quantity: 1,
-      imageUrl:
-        'https://images-eu.ssl-images-amazon.com/images/I/31wFbn6-XUL._SY300_SX300_QL70_FMwebp_.jpg',
-    },
-  ]);
+  private _cart: CartItem[] = [];
+  public cartChanged = new BehaviorSubject<CartItem[]>([]);
 
   constructor(private productService: ProductService) {}
 
@@ -56,8 +36,6 @@ export class CartService {
   }
 
   public removeFromCart(id: string) {
-    console.log(id);
-    console.log(this._cart);
     const itemIndex = this._cart.findIndex((cItem) => cItem.id === id);
     console.log(itemIndex);
     if (this._cart[itemIndex].quantity > 1) {
