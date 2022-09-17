@@ -1,0 +1,45 @@
+<nav class="header">
+  <img
+    class="header__logo"
+    src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
+    alt=""
+    routerLink="/"
+  />
+
+  <div class="header__search">
+    <input type="text" class="header__searchInput" />
+    <i class="fa-solid fa-magnifying-glass header__searchIcon"></i>
+  </div>
+
+  <div class="header__nav">
+    <a class="header__link" routerLink="/login">
+      <div class="header__option">
+        <span class="header__optionLineOne">Hello Tubai</span>
+        <span class="header__optionLineTwo">Sign In</span>
+      </div>
+    </a>
+
+    <a class="header__link" routerLink="/">
+      <div class="header__option">
+        <span class="header__optionLineOne">Returns</span>
+        <span class="header__optionLineTwo">& Orders</span>
+      </div>
+    </a>
+
+    <a class="header__link" routerLink="/">
+      <div class="header__option">
+        <span class="header__optionLineOne">Your</span>
+        <span class="header__optionLineTwo">Prime</span>
+      </div>
+    </a>
+
+    <a class="header__link" routerLink="/checkout">
+      <div class="header__optionBasket">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="header__optionLineTwo header__basketCount">{{
+          cartLength
+        }}</span>
+      </div>
+    </a>
+  </div>
+</nav>

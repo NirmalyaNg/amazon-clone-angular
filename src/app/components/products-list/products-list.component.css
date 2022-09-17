@@ -1,0 +1,24 @@
+.home {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+.home__image {
+  width: 100%;
+  object-fit: contain;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  margin-bottom: -120px;
+  z-index: -1;
+}
+
+.home__row {
+  display: flex;
+  margin-left: 5px;
+  margin-right: 5px;
+  z-index: 1;
+  justify-content: space-between;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  justify-content: center;
+}

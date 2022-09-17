@@ -1,0 +1,16 @@
+<div class="product">
+  <div class="product__info">
+    <p class="product__title">{{ productDetail.title }}</p>
+    <p class="product__price">
+      <small>$</small>
+      <strong>{{ productDetail.price }}</strong>
+    </p>
+    <div class="product__rating">
+      <ng-container *ngFor="let _ of getModifiedRating(productDetail.rating)">
+        <p>⭐</p>
+      </ng-container>
+    </div>
+  </div>
+  <img [src]="productDetail.imageUrl" alt="" />
+  <button (click)="onAddToCart()">Add to basket</button>
+</div>
