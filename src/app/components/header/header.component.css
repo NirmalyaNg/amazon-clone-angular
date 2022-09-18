@@ -4,7 +4,7 @@
   align-items: center;
   position: fixed;
   top: 0;
-  z-index: 1000;
+  z-index: 60;
   width: 100%;
 }
 
@@ -37,6 +37,7 @@
 .header__link {
   color: white;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .header__nav {

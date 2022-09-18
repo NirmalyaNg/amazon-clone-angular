@@ -12,10 +12,19 @@
   </div>
 
   <div class="header__nav">
-    <a class="header__link" routerLink="/login">
+    <a class="header__link" routerLink="/login" *ngIf="!isLoggedIn">
       <div class="header__option">
-        <span class="header__optionLineOne">Hello Tubai</span>
-        <span class="header__optionLineTwo">Sign In</span>
+        <span class="header__optionLineOne">Hello User</span>
+        <span class="header__optionLineTwo">Login</span>
+      </div>
+    </a>
+
+    <a class="header__link" *ngIf="isLoggedIn" (click)="handleLogout()">
+      <div class="header__option">
+        <span class="header__optionLineOne"
+          >Hello {{ loggedInUser.email }}</span
+        >
+        <span class="header__optionLineTwo">Logout</span>
       </div>
     </a>
 
@@ -33,7 +42,7 @@
       </div>
     </a>
 
-    <a class="header__link" routerLink="/checkout">
+    <a class="header__link" routerLink="/cart">
       <div class="header__optionBasket">
         <i class="fa-solid fa-cart-shopping"></i>
         <span class="header__optionLineTwo header__basketCount">{{

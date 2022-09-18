@@ -1,24 +1,24 @@
-.checkoutProduct {
+.cartProduct {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
 }
 
-.checkoutProduct__image {
+.cartProduct__image {
   min-width: 160px;
   width: 160px;
   height: 160px;
 }
 
-.checkoutProduct__rating {
+.cartProduct__rating {
   display: flex;
 }
 
-.checkoutProduct__info {
+.cartProduct__info {
   padding-left: 20px;
 }
 
-.checkoutProduct__info > button {
+.cartProduct__info > button {
   background: #f0c14b;
   border: 1px solid;
   margin-top: 10px;
@@ -26,7 +26,7 @@
   cursor: pointer;
 }
 
-.checkoutProduct__title {
+.cartProduct__title {
   font-size: 17px;
   font-weight: 800;
 }

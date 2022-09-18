@@ -1,13 +1,13 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import { CartItem } from 'src/app/models/cart-item.model';
 import { CartService } from 'src/app/services/cart.service';
 
 @Component({
-  selector: 'app-checkout-product',
-  templateUrl: './checkout-product.component.html',
-  styleUrls: ['./checkout-product.component.css'],
+  selector: 'app-cart-product',
+  templateUrl: './cart-product.component.html',
+  styleUrls: ['./cart-product.component.css'],
 })
-export class CheckoutProductComponent implements OnInit {
+export class CartProduct implements OnInit {
   @Input() cartItem: CartItem;
   constructor(private cartService: CartService) {}
 

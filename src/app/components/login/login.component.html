@@ -1,1 +1,39 @@
-<p>login works!</p>
+<div class="login">
+  <img
+    routerLink="/"
+    class="login__logo"
+    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png"
+    alt=""
+  />
+
+  <div class="login__container">
+    <h1>Sign in</h1>
+    <form [formGroup]="loginForm" novalidate (ngSubmit)="handleSubmit()">
+      <p class="login__errorMessage" *ngIf="error">{{ error }}</p>
+      <h5>E-mail</h5>
+      <input type="email" formControlName="email" />
+      <h5>Password</h5>
+      <input type="password" formControlName="password" />
+      <button
+        class="login__signinButton"
+        type="submit"
+        [disabled]="loginForm.invalid"
+      >
+        Sign In
+      </button>
+      <p>
+        By signing-in you agree to Amazon's Conditions of User & Sale. Please
+        see our Privacy Notice, our Cookies Notice and our interest-based Ads
+        Notice.
+      </p>
+      <button
+        class="login__registerButton"
+        (click)="handleSignup()"
+        [disabled]="loginForm.invalid"
+        type="button"
+      >
+        Create your Amazon Account
+      </button>
+    </form>
+  </div>
+</div>

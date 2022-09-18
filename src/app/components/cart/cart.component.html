@@ -1,1 +1,26 @@
-<p>cart works!</p>
+<div class="cart">
+  <div class="cart__left">
+    <img
+      class="cart__add"
+      src="https://images-na.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1._CB423492668_.jpg"
+      alt=""
+    />
+    <div *ngIf="cart.length === 0">
+      <h2>Your Shopping Basket is empty</h2>
+      <p>
+        You have no items in your basket. To add one click on 'Add to basket'
+        for any product.
+      </p>
+    </div>
+    <div *ngIf="cart.length > 0">
+      <h2 class="cart__title">Your Shopping Basket</h2>
+      <app-cart-product
+        *ngFor="let product of cart"
+        [cartItem]="product"
+      ></app-cart-product>
+    </div>
+  </div>
+  <div class="cart__right" *ngIf="cart.length > 0">
+    <app-subtotal></app-subtotal>
+  </div>
+</div>
